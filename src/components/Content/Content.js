@@ -1,12 +1,13 @@
 import React from 'react'
 import Container from '../generic/Container'
 import Section from '../generic/Section'
+import CitiesForm from '../CitiesForm/CitiesForm'
 
 const Content = () => {
   return (
     <Section>
       <Container>
-        <h1>Content will go here</h1>
+        <CitiesForm />
       </Container>
     </Section>
   );
