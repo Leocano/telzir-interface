@@ -15,6 +15,10 @@ const CitiesForm = inject('citiesStore')(observer(props => {
         <Select options={options} selectedValue={citiesStore.state.originCity} 
         onChange={(e) => citiesStore.setOriginCity(e.target.value)} />
       </Field>
+      <Field label='Para qual cidade deseja ligar?'>
+        <Select options={options} selectedValue={citiesStore.state.destinationCity} 
+        onChange={(e) => citiesStore.setDestinationCity(e.target.value)} />
+      </Field>
     </Form>
   )
 }))

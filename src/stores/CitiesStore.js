@@ -6,6 +6,7 @@ class CitiesStore {
     this.state = {
       cities: [],
       originCity: '',
+      destinationCity: '',
       isFetching: false
     }
     this.fetchAllCities()
@@ -18,6 +19,7 @@ class CitiesStore {
       console.log(res.data)
       this.state.cities = res.data
       this.setOriginCity(res.data[0].ddd_code)
+      this.setDestinationCity(res.data[1].ddd_code)
       this.state.isFetching = false
     })
     .catch(err => {
@@ -27,8 +29,11 @@ class CitiesStore {
   }
 
   setOriginCity(dddCode) {
-    console.log(dddCode)
     this.state.originCity = dddCode
+  }
+
+  setDestinationCity(dddCode) {
+    this.state.destinationCity = dddCode
   }
 }
 
