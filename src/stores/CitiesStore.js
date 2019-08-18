@@ -7,7 +7,19 @@ class CitiesStore {
       cities: [],
       originCity: '',
       destinationCity: '',
-      isFetching: false
+      isFetching: false,
+      minutes: 0,
+      plans: [{
+        name: 'FaleMais 30',
+        value: 30
+      },{
+        name: 'FaleMais 60',
+        value: 60
+      },{
+        name: 'FaleMais 120',
+        value: 120
+      }],
+      selectedPlan: 30
     }
     this.fetchAllCities()
   }
@@ -35,12 +47,17 @@ class CitiesStore {
   setDestinationCity(dddCode) {
     this.state.destinationCity = dddCode
   }
+
+  setMinutes(minutes) {
+    this.state.minutes = minutes
+  }
 }
 
 decorate(CitiesStore, {
   state: observable,
   fetchAllCities: action,
-  setOriginCity: action
+  setOriginCity: action,
+  setMinutes: action
 })
 
 export default CitiesStore
