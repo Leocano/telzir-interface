@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Container from '../generic/Container'
 import Section from '../generic/Section'
 
