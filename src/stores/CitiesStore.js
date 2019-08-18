@@ -51,6 +51,10 @@ class CitiesStore {
   setMinutes(minutes) {
     this.state.minutes = minutes
   }
+
+  setPlan(plan) {
+    this.state.selectedPlan = plan
+  }
 }
 
 decorate(CitiesStore, {
