@@ -1,7 +1,5 @@
 import React from 'react'
 
-const Section = ({ children }) => {
-  return <div className='section'>{children}</div>
-}
+const Section = ({ children }) => <div className='section'>{children}</div>
 
 export default Section
