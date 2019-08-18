@@ -34,7 +34,7 @@ const CitiesForm = inject('citiesStore')(observer(props => {
       </Field>
 
       <Field>
-        <Button text='Calcular' />
+        <Button text='Calcular' onClick={() => citiesStore.calculatePrice()}/>
       </Field>
     </Form>
   )

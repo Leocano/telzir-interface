@@ -19,7 +19,9 @@ class CitiesStore {
         name: 'FaleMais 120',
         value: 120
       }],
-      selectedPlan: 30
+      selectedPlan: 30,
+      priceWithoutDiscount: '',
+      priceWithDiscount: ''
     }
     this.fetchAllCities()
   }
@@ -55,13 +57,32 @@ class CitiesStore {
   setPlan(plan) {
     this.state.selectedPlan = plan
   }
+
+  calculatePrice() {
+    axios.get('http://localhost:8000/pricings/calculate',{
+      params: {
+        origin_ddd: this.state.originCity,
+        destination_ddd: this.state.destinationCity,
+        minutes: this.state.minutes,
+        offset: this.state.selectedPlan
+      }
+    })
+    .then(res => {
+      this.state.priceWithDiscount = res.data.price_with_discount
+      this.state.priceWithoutDiscount = res.data.price_without_discount
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
 }
 
 decorate(CitiesStore, {
   state: observable,
   fetchAllCities: action,
   setOriginCity: action,
-  setMinutes: action
+  setMinutes: action,
+  setPlan: action
 })
 
 export default CitiesStore
