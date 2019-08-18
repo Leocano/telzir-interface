@@ -5,7 +5,7 @@ const Select = props => {
     return {...option, key: i}
   })
   return (
-    <div className='select'>
+    <div className='select is-fullwidth'>
       <select value={props.selectedValue} onChange={props.onChange}>
         {options.map(({ value, name, key }) => {
           return <option key={key} value={value}>{name}</option>

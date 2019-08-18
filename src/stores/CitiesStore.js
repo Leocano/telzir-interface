@@ -20,8 +20,8 @@ class CitiesStore {
         value: 120
       }],
       selectedPlan: 30,
-      priceWithoutDiscount: '',
-      priceWithDiscount: ''
+      priceWithoutDiscount: '-',
+      priceWithDiscount: '-'
     }
     this.fetchAllCities()
   }

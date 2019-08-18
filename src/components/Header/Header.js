@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <Section>
       <Container>
-        <h1>'Sup world</h1>
+        <h1>Telzir - Fale Mais</h1>
       </Container>
     </Section>
   );
