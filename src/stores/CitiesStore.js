@@ -68,8 +68,8 @@ class CitiesStore {
       }
     })
     .then(res => {
-      this.state.priceWithDiscount = res.data.price_with_discount
-      this.state.priceWithoutDiscount = res.data.price_without_discount
+      this.state.priceWithDiscount = res.data.price_with_discount.toFixed(2)
+      this.state.priceWithoutDiscount = res.data.price_without_discount.toFixed(2)
     })
     .catch(err => {
       console.log(err)
