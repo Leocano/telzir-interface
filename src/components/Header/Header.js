@@ -1,12 +1,13 @@
 import React from 'react';
 import Container from '../generic/Container'
 import Section from '../generic/Section'
+import Title from '../generic/Title'
 
 const Header = () => {
   return (
-    <Section>
+    <Section className='hero is-info'>
       <Container>
-        <h1>Telzir - Fale Mais</h1>
+        <Title>Telzir - Fale Mais</Title>
       </Container>
     </Section>
   );
